@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Image, View } from 'react-native';
 import styled from '@emotion/native';
 // import gravatar from 'gravatar';
 
@@ -10,12 +10,7 @@ const Workspace = () => {
         <LeftMenu>
           <View>
             <View>
-              <ProfileImage
-                source={{
-                  // uri: gravatar.url('emerleite@gmail.com', { s: '50px', d: 'retro' }),
-                  uri: 'https://via.placeholder.com/40',
-                }}
-              />
+              <Image style={{ width: 50, height: 50 }} source={require('../../assets/menu.svg')} />
             </View>
           </View>
         </LeftMenu>
