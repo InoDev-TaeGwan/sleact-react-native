@@ -4,6 +4,7 @@ import styled from '@emotion/native';
 import { SvgXml } from 'react-native-svg';
 import Hamburger from '../../assets/menu.svg';
 
+
 const Workspace = () => {
   return (
     <View>
@@ -11,7 +12,7 @@ const Workspace = () => {
         <LeftMenu>
           <View>
             <View>
-              <SvgXml xml={Hamburger} />
+              <SvgXml xml={Hamburger.toString()} />
             </View>
           </View>
         </LeftMenu>
