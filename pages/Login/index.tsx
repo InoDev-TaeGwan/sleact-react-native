@@ -5,13 +5,22 @@ import axios from 'axios';
 import useSWR from 'swr';
 import fetcher from '../../utils/fetcher';
 
+// error Failed to build iOS project. We ran "xcodebuild" command but it exited with error code 65. To debug build logs further, consider building your app with Xcode.app, by opening slick.xcworkspace.
+// 빌드 오류 해결법
+// cd ios
+// pod install
+// rm -rf build/
+// cd ..
+// npm run ios
+
 const Login: FC = ({ navigation }: any) => {
-  const { data, revalidate } = useSWR('http://localhost:3095/api/users', fetcher);
+  const { data, revalidate } = useSWR('http://192.168.0.100:3095/api/users', fetcher);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState(false);
 
   console.log(data);
+  // 안드로이드는 commend + M 을 눌러 디버깅
   useEffect(() => {
     if (data) {
       return navigation.navigate('Workspace');
@@ -23,7 +32,7 @@ const Login: FC = ({ navigation }: any) => {
       setLoginError(false);
       axios
         .post(
-          'http://localhost:3095/api/users/login',
+          'http://192.168.0.100:3095/api/users/login', // android 9 이상부터는 http 프로토콜 요청이 기본적으로 막혀있다. 그래서 로컬pc 아이피 주소로 접속
           { email, password },
           {
             withCredentials: true, // 백엔드 서버와 프론트 서버의 포트번호가 달라서 쿠키전달이 안돼서 설정. post에서는 3번째에 넣을것.
