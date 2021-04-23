@@ -1,7 +1,8 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 import styled from '@emotion/native';
-// import gravatar from 'gravatar';
+import { SvgXml } from 'react-native-svg';
+import Hamburger from '../../assets/menu.svg';
 
 const Workspace = () => {
   return (
@@ -10,7 +11,7 @@ const Workspace = () => {
         <LeftMenu>
           <View>
             <View>
-              <Image style={{ width: 50, height: 50 }} source={require('../../assets/menu.svg')} />
+              <SvgXml xml={Hamburger} />
             </View>
           </View>
         </LeftMenu>
@@ -18,7 +19,6 @@ const Workspace = () => {
           <View>
             <ProfileImage
               source={{
-                // uri: gravatar.url('emerleite@gmail.com', { s: '50px', d: 'retro' }),
                 uri: 'https://via.placeholder.com/40',
               }}
             />
