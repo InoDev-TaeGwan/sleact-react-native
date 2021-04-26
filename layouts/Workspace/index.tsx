@@ -1,8 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import styled from '@emotion/native';
-import { SvgXml } from 'react-native-svg';
-import Hamburger from '../../assets/menu.svg';
+import Menu from '../../svg/Menu';
 
 
 const Workspace = () => {
@@ -11,9 +10,7 @@ const Workspace = () => {
       <Header>
         <LeftMenu>
           <View>
-            <View>
-              <SvgXml xml={Hamburger.toString()} />
-            </View>
+            <Menu width="25px" height="25px" />
           </View>
         </LeftMenu>
         <RightMenu>
